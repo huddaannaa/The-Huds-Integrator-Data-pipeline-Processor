@@ -1,0 +1,22 @@
+---
+source_file_paths: 'D:\RECENT-HUD-TOOLS\huds-cyber-scan-v.1.9\archives\*\*.json'
+destination_file_paths: 'D:\integrations_data_2\data_enrichment'
+since_db_directory: 'D:\integrations_data_2\since_db'
+signature_look_back: 1
+enrichments:
+- country_enrichment:
+    #this example is looking into the json file for key=link_content to extract all countries and enrich them back
+    key_in_json_data_to_enrich: link_content
+    enrichment_type: country_enrichment
+- cve_enrichment:
+    #this example is looking into the json file for key=link_content to extract all countries and enrich them back
+    key_in_json_data_to_enrich: link_content
+    enrichment_type: cve_enrichment
+- tag_enrichment:
+    #this example is just adding a tag to the json event and does not event need link_content
+    key_in_json_data_to_enrich: 
+    enrichment_type: tag_enrichment
+- threat_actor_enrichment:
+    #this example is just adding a tag to the json event and does not event need link_content
+    key_in_json_data_to_enrich: link_content
+    enrichment_type: threat_actor_enrichment
